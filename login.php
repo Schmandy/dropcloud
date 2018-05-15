@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "configuration.php";
 
 if(isset($_GET['login'])) {
