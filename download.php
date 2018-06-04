@@ -1,7 +1,6 @@
 <?php
-
-//https://mars.iuk.hdm-stuttgart.de/~gurzki/dl/download2.php?filename=bild.jpg
-$directory = "/home/mpaeth/public_html/upload/files";
+//https://mars.iuk.hdm-stuttgart.de/~mp134/dl/download.php?filename=bild.jpg
+$directory = "/home/mp134/public_html/upload/files";
 $mimetype = "image/jpeg";
 if(empty($_GET["filename"]))
 {
@@ -13,4 +12,9 @@ else
     $filename=$_GET["filename"];
 }
 $filepath=$directory.$filename; header("Content-Type:".$mimetype);
-header('Content-Disposition: attachment;filename="'.$filename.'"'); header("Content-Transfer-Encoding: binary "); header("Content-Length: ".filesize($filepath)); readfile($filepath);/**
+header('Content-Disposition: attachment;filename="'.$filename.'"');
+header("Content-Transfer-Encoding: binary ");
+header("Content-Length: ".filesize($filepath));
+readfile($filepath);
+
+?>
