@@ -25,3 +25,4 @@ if ($fileType == "jpg" OR $fileType=="png" OR $fileType== "jpeg" OR $fileType ==
 if (!move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "/home/mp134/public_html/upload/files/".$_FILES["uploadfile"]["name"])) { echo "Datei nicht hochgeladen";
     die();
 }
+?>
