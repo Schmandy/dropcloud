@@ -13,7 +13,10 @@ if(isset($_GET['login'])) {
     //Überprüfung des Passworts
     if ($user !== false && password_verify($passwort, $user['passwort'])) {
         $_SESSION['userid'] = $user['id'];
-        die('Login erfolgreich. Weiter zu <a href="Dashboard/index.html">internen Bereich</a>');
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['name'] = $user['name'];
+        header('location:dashboard/index.php');
+        exit();
     } else {
         $errorMessage = "E-Mail oder Passwort war ungültig<br>";
     }
@@ -131,7 +134,7 @@ if(isset($errorMessage)) {
                     </div>
                     <div class="etc-login-form">
                         <p>Passwort vergessen? <a class="hier" href="#">Hier klicken</a></p>
-                        <p>Neu hier? <a class="neu" href="registrieren.php">Neues Konto anlegen</a></p>
+                        <p>Neu hier? <a class="neu" href="registrierung.php">Neues Konto anlegen</a></p>
                     </div>
                 </form>
             </div>

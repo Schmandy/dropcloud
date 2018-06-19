@@ -1,12 +1,12 @@
-<?php
+<--!<?php
 session_start();
-include "configuration.php";
-?>
+//include "configuration.php";
+
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registrierung </title>
+    <title>Registrierung</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,25 +46,31 @@ include "configuration.php";
 
 <body id="page-top">
 
-<a href="index.html"><img src="img/logo.png" alt="logo" class="logobild"></a>
-
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav-login">
-    <div class="container"
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
-            </li>
-        </ul>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Startseite</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#features">Registrieren</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<header class="masthead-login">
+<header class="masthead">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-lg-7 my-auto">
@@ -74,11 +80,8 @@ include "configuration.php";
         <div class="col-lg-5 my-auto">
         </div>
     </div>
+    </div>
 </header>
-
-<div class="registrieren-schrift">
-    <h1>Registrieren</h1>
-</div>
 
 <?php
 $showFormular = true;
@@ -128,50 +131,58 @@ if($showFormular) {
     ?>
 
     <!-- REGISTRATION FORM -->
-    <form action="?datenbank=1" method="post">
-        <div class="text-center" style="padding:50px 0">
-            <div class="logo">register</div>
-            <!-- Main Form -->
-            <div class="login-form-1">
-                <form id="register-form" class="text-left">
-                    <div class="login-form-main-message"></div>
-                    <div class="main-login-form">
-                        <div class="login-group">
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="passwort" class="sr-only">Passwort</label>
-                                <input type="password" class="form-control" id="passwort" name="passwort" placeholder="passwort">
-                            </div>
-                            <div class="form-group">
-                                <label for="passwort2" class="sr-only">Password bestätigen</label>
-                                <input type="password" class="form-control" id="passwort2" name="passwort2" placeholder="passwort bestätigen">
-                            </div>
-                            <div class="form-group">
-                                <label for="vorname" class="sr-only">Vorname</label>
-                                <input type="text" class="form-control" id="vorname" name="vorname" placeholder="vorname">
-                            </div>
-                            <div class="form-group">
-                                <label for="nachname" class="sr-only">Nachname</label>
-                                <input type="text" class="form-control" id="nachname" name="nachname" placeholder="nachname">
-                            </div>
-                            <div class="form-group login-group-checkbox">
-                                <input type="checkbox" class="" id="nutzungsbedingungen" name="nutzbungsbedingungen">
-                                <label for="nutzungsbedingungen">ich bestätige, die <a href="#">Nutzungsbedingungen</a> gelesen zu haben</label>
-                            </div>
+    <div class="text-center" style="padding:50px 0">
+        <div class="logo">register</div>
+        <!-- Main Form -->
+        <div class="login-form-1">
+            <form id="register-form" class="text-left">
+                <div class="login-form-main-message"></div>
+                <div class="main-login-form">
+                    <div class="login-group">
+                        <div class="form-group">
+                            <label for="reg_email" class="sr-only">Email</label>
+                            <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
                         </div>
-                        <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                        <div class="form-group">
+                            <label for="reg_passwort" class="sr-only">Passwort</label>
+                            <input type="password" class="form-control" id="reg_passwort" name="reg_passwort" placeholder="passwort">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg_password_confirm" class="sr-only">Passwort bestätigen</label>
+                            <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg_email" class="sr-only">Email</label>
+                            <input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg_fullname" class="sr-only">Full Name</label>
+                            <input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="full name">
+                        </div>
+
+                        <div class="form-group login-group-checkbox">
+                            <input type="radio" class="" name="reg_gender" id="male" placeholder="username">
+                            <label for="male">male</label>
+
+                            <input type="radio" class="" name="reg_gender" id="female" placeholder="username">
+                            <label for="female">female</label>
+                        </div>
+
+                        <div class="form-group login-group-checkbox">
+                            <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                            <label for="reg_agree">i agree with <a href="#">terms</a></label>
+                        </div>
                     </div>
-                    <div class="etc-login-form">
-                        <p>Du hast schon einen Account? <a href="login.php">Hier einloggen</a></p>
-                    </div>
-                </form>
-            </div>
-            <!-- end:Main Form -->
+                    <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                </div>
+                <div class="etc-login-form">
+                    <p>already have an account? <a href="#">login here</a></p>
+                </div>
+            </form>
         </div>
-    </form>
+        <!-- end:Main Form -->
+    </div>
 
     <?php
 } //Ende von if($showFormular)
@@ -180,11 +191,14 @@ if($showFormular) {
 <script src="login.js"></script>
 
 <footer>
-    <div class="container-register-footer">
-        <p>Copyright © DropCloud 2018. All Rights Reserved.</p>
+    <div class="container">
+        <p>&copy; DropCloud 2018. All Rights Reserved.</p>
         <ul class="list-inline">
             <li class="list-inline-item">
                 <a href="#">Impressum</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Über uns</a>
             </li>
             <li class="list-inline-item">
                 <a href="#">Hilfe</a>
@@ -205,3 +219,4 @@ if($showFormular) {
 
 </body>
 </html>
+
