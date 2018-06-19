@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Übung ">
+  <component name="PublishConfigData" autoUpload="Always">
     <serverData>
-      <paths name="Übung ">
+      <paths name="mars.iuk.hdm-stuttgart.de">
         <serverdata>
           <mappings>
             <mapping deploy="/dropcloud" local="$PROJECT_DIR$" web="/dropcloud" />
